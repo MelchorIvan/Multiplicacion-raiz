@@ -16,13 +16,13 @@ MAIN_PROG CODE; let linker place main program
 START		;inicio del programa
 
     
-    MOVLW 0X07	    ;Apagar comparadores
+    MOVLW 0X07	   
     MOVWF CMCON
-    BCF STATUS, RP1	;Cambiar al banco 1 apagado el RP1
-    BSF STATUS, RP0	;Y encendido el RP0
-    MOVLW b'00000000'	;Establecer puerto B como salida (los 8 bits del puerto)
+    BCF STATUS, RP1	
+    BSF STATUS, RP0	
+    MOVLW b'00000000'	
     MOVWF TRISB
-    BCF STATUS,RP0	;Regresar al banco 0 apagando el RP0
+    BCF STATUS,RP0	
     GOTO INICIO
     
     
